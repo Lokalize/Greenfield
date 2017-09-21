@@ -53,7 +53,8 @@ exports.handleForm = (req, res) => {
         address: coords,
         capacity: data.capacity,
         userId: data.userid,
-        locality: data.locality
+        locality: data.locality,
+        street: req.body.address
       })
       .then( () => {
          return events.findAll({
