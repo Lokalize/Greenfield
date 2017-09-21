@@ -53,7 +53,22 @@ exports.handleForm = (req, res) => {
         address: coords,
         capacity: data.capacity,
         userId: data.userid,
-        locality: data.locality
+        locality: data.locality,
+        street: req.body.address
+      })
+      .then( () => {
+         return events.findAll({
+          attributes: ['id'],
+          where: {
+            name: data.name
+          }
+        })
+      })
+      .then( (eventId) => {
+        participations.create({
+          event_id: eventId[0].dataValues.id,
+          user_id: data.userid
+        })
       })
       .then( () => {
          return events.findAll({
