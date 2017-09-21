@@ -3,6 +3,7 @@ const Sequelize = require('sequelize');
 const events = require('../models/eventSchema');
 const parser = require('body-parser');
 const NodeGeocoder = require('node-geocoder');
+const participations = require('../models/usersEventsSchema');
 
 let options = {
   provider: 'google',
@@ -53,6 +54,20 @@ exports.handleForm = (req, res) => {
         capacity: data.capacity,
         userId: data.userid,
         locality: data.locality
+      })
+      .then( () => {
+         return events.findAll({
+          attributes: ['id'],
+          where: {
+            name: data.name
+          }
+        })
+      })
+      .then( (eventId) => {
+        participations.create({
+          event_id: eventId[0].dataValues.id,
+          user_id: data.userid
+        })
       })
       .then((data) => {
         res.send('Event Created')
