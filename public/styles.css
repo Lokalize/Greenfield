@@ -19,8 +19,8 @@
 }
 .nav-bar {
   background-color: #FFAB3D;
-  background-image: linear-gradient(to bottom,rgba(233, 105, 1, 0.96) 0,#FFDC9A 100%) !important; 
-  color: #851203; 
+  background-image: linear-gradient(to bottom,rgba(233, 105, 1, 0.96) 0,#FFDC9A 100%) !important;
+  color: #851203;
 }
 
 .navbar,
@@ -56,7 +56,19 @@ body{
   background-size: cover;
   font-family: 'Inconsolata', monospace;
 }
+
 .backgroundImage {
   height: 100vh;
   background-color: rgba(255, 255, 255, 0.5);
 } 
+
+.failure {
+  color: #B22222;
+  text-align: center;
+}
+
+.success {
+  text-align: center;
+  text-decoration-color: #006400
+}
+
