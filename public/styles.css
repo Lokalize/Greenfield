@@ -52,6 +52,11 @@ h1 {
   letter-spacing: 0.5em;
 }
 body{
-
+  background: url(http://bit.ly/2hojSeX);
+  background-size: cover;
   font-family: 'Inconsolata', monospace;
 }
+.backgroundImage {
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+} 

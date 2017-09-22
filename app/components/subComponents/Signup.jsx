@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form, FormControl, FormGroup} from 'react-bootstrap';
+import {Jumbotron, Button, Form, FormControl, FormGroup} from 'react-bootstrap';
 import Axios from 'axios';
 
 const SignupWarning = (props) => {
@@ -58,6 +58,7 @@ class Signup extends React.Component {
   render() {
     return(
       <div>
+        <Jumbotron>
          <Form >
           <FormGroup controlId="name" validationState={this.getValidationState(this.state.username)}>
             <FormControl
@@ -80,6 +81,7 @@ class Signup extends React.Component {
         <Button type="submit" value="Submit" onClick={this.checkUsernamePassword.bind(this)}>Create My Account</Button><br/>
         <SignupWarning message={this.state.message}/>
         </Form>
+        </Jumbotron>
       </div>
       )
   }

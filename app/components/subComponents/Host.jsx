@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, FormControl, PageHeader, ButtonToolbar, Button, ButtonGroup, DropdownButton, MenuItem, ControlLabel } from 'react-bootstrap';
+import { Jumbotron, Form, FormGroup, FormControl, PageHeader, ButtonToolbar, Button, ButtonGroup, DropdownButton, MenuItem, ControlLabel } from 'react-bootstrap';
 import _ from 'underscore';
 import axios from 'axios';
 import {Debounce} from 'react-throttle';
@@ -101,6 +101,7 @@ class Host extends React.Component {
   render() {
     return (
       <div>
+        
         <h1 className="CreateEventHeader"> Create an Event! </h1> <br></br>
         <Form className="EventForm">
 
@@ -167,6 +168,7 @@ class Host extends React.Component {
             
           </ButtonToolbar><br/>
         </Form>
+        
       </div>
 
     )
