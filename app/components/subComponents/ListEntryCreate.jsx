@@ -9,10 +9,10 @@ const ListEntryCreate = (props) => {
     var venue = $(e.target).attr('id');
     var address = $(e.target).attr('class');
     console.log('HOST SELECTED', venue + ' @ ' + address)
-    $('#options').children().css('background-color', 'white');
-    $('#options').children().css('box-shadow', '');
-    $('#options').children().css('border-width', '1px');
-    $('#options').children().css('font-weight', 'normal');
+    $('#options').children().children().css('background-color', 'white');
+    $('#options').children().children().css('box-shadow', '');
+    $('#options').children().children().css('border-width', '1px');
+    $('#options').children().children().css('font-weight', 'normal');
     $(e.target).css('box-shadow', 'inset 0 0 0 1px #80b0fc, inset 0 1px 30px #80b0fc');
     $(e.target).css('border-width', '3px');
     $(e.target).css('background-color', '#D3D3D3');

@@ -85,6 +85,7 @@ class Host extends React.Component {
     console.log(this.props.eventSuccessful)
     e.preventDefault();
     this.props.submitEventCallback(this.state.name, this.state.type, this.state.date, this.state.capacity);
+    $('#options').toggle();
   };
 
   clickCancel() {
@@ -167,7 +168,7 @@ class Host extends React.Component {
 
           </ButtonToolbar><br/>
         </Form>
-        
+
       </div>
 
     )
