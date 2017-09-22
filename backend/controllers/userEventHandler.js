@@ -14,7 +14,7 @@ const handleUserEvent = (req, res) => {
     select
       name as eventName,
       dinner_type,
-      date as eventDate,
+      to_char(date, 'Day Mon DD, YYYY') as eventDate,
       location as eventLocation,
       address as coordinates
     from users u

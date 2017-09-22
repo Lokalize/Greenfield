@@ -10,7 +10,7 @@ const ListEntry = (props) => {
             </li>
           ))}
       </ul>
-    </div> 
+    </div>
   )
 };
 

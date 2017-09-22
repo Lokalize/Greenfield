@@ -2,6 +2,8 @@ import React from 'react';
 import { compose, withProps, lifecycle } from "recompose";
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, DirectionsRenderer } from "react-google-maps";
 import SearchBox from "react-google-maps/lib/components/places/SearchBox";
+import $ from 'jquery';
+
 
 const MapWithADirectionsRenderer = compose(
   withProps({
@@ -15,6 +17,7 @@ const MapWithADirectionsRenderer = compose(
   withGoogleMap,
   lifecycle({
     componentWillReceiveProps() {
+      console.log('made itt')
       let endLat = this.props.endAddress[0];
       let endLong = this.props.endAddress[1];
       const DirectionsService = new google.maps.DirectionsService();
@@ -53,11 +56,12 @@ const MapWithADirectionsRenderer = compose(
         onSearchBoxMounted: ref => {
           refs.searchBox = ref;
         },
+
         onPlacesChanged: () => {
-         
+
           const places = refs.searchBox.getPlaces();
+          console.log(places);
           const bounds = new google.maps.LatLngBounds();
-         
           places.forEach(place => {
             if (place.geometry.viewport) {
               bounds.union(place.geometry.viewport)

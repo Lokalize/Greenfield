@@ -16,12 +16,12 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      address: 'Select Locality',
+      address: 'Locality',
       date: '',
       emailValid: false,
       passwordValid: false,
       formValid: false,
-      dinnerType: 'Dinner Type',
+      dinnerType: 'Cuisine',
       message: false
     }
     this.dinnerTypeChange = this.dinnerTypeChange.bind(this)
@@ -32,11 +32,19 @@ class Search extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    let dinnerType = this.state.dinnerType;
+    let locality = this.state.address
+    if (dinnerType === 'Cuisine'){
+      dinnerType = ''
+    }
+    if (locality === 'Locality'){
+      locality = ''
+    }
     axios.post('/api/search', {
       user_id: this.props.user_id,
-      address: this.state.address,
+      address: locality,
       date: this.state.date,
-      dinnerType: this.state.dinnerType
+      dinnerType: dinnerType
     })
     .then(data => {
       this.setState({message: data.data})
@@ -80,6 +88,7 @@ class Search extends React.Component {
             <MenuItem eventKey="Flatiron" >Flatiron</MenuItem>
             <MenuItem eventKey="Gramercy" >Gramercy</MenuItem>
             <MenuItem eventKey="Greenwich Village" >Greenwich Village</MenuItem>
+            <MenuItem eventKey="Hell's Kitchen" >Hells Kitchen</MenuItem>
             <MenuItem eventKey="Lower East Side" >Lower East Side</MenuItem>
             <MenuItem eventKey="Lower West Side" >Lower West Side</MenuItem>
             <MenuItem eventKey="Midtown" >Midtown</MenuItem>
@@ -98,9 +107,19 @@ class Search extends React.Component {
           id="bg-nested-dropdown"
           onSelect={this.dinnerTypeChange}
         >
+          <MenuItem eventKey="American" >American</MenuItem>
+          <MenuItem eventKey="Asian" >Asian</MenuItem>
+          <MenuItem eventKey="BBQ" >BBQ</MenuItem>
+          <MenuItem eventKey="Breakfast" >Breakfast</MenuItem>
+          <MenuItem eventKey="Burger" >Burger</MenuItem>
+          <MenuItem eventKey="Cafe" >Cafe</MenuItem>
+          <MenuItem eventKey="Diner" >Diner</MenuItem>
+          <MenuItem eventKey="Fusion" >Fusion</MenuItem>
+          <MenuItem eventKey="Italian" >Italian</MenuItem>
+          <MenuItem eventKey="Mexican" >Mexican</MenuItem>
+          <MenuItem eventKey="Pizza" >Pizza</MenuItem>
           <MenuItem eventKey="Seafood" >Seafood</MenuItem>
           <MenuItem eventKey="Steak" >Steak</MenuItem>
-          <MenuItem eventKey="Chicken" >Chicken</MenuItem>
           <MenuItem eventKey="Vegetarian" >Vegetarian</MenuItem>
           <MenuItem eventKey="" >No Preference</MenuItem>
         </DropdownButton>

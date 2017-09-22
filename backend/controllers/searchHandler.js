@@ -43,7 +43,9 @@ exports.searchEvents = (req, res) => {
   let user_id = req.body.user_id
   let type = req.body.dinnerType;
   let address = req.body.address;
-  let whereObj = {};
+  let whereObj = {
+    date: date
+  };
   if (type) {
     whereObj.dinner_type = type
   }

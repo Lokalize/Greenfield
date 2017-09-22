@@ -30,7 +30,7 @@ class Home extends React.Component {
       .then((events) => {
         if(events.data.length) {
           this.setState({events: events.data});
-        } 
+        }
       })
       .catch((err) => {
         console.error('axios GET error: ', err);
@@ -38,20 +38,24 @@ class Home extends React.Component {
   }
 //create an on click that sets the end address
   eventClick(e) {
-    console.log(`here is event coords ${e.target.value}`)
     let endAddress = e.target.value;
     endAddress = endAddress.split(',').map((number) => parseFloat(number))
     this.setState({endAddress: endAddress}, () => {
       this.setState({endAddress: []})
       console.log(`print this ${this.state.endAddress}`)
-    }) 
+      if (!this.state.test) {
+        this.setState({test: 'test'})
+        return
+      }
+      this.setState({test: ''})
+    })
   }
   render() {
     return (
-      <div> 
+      <div>
         <Weather />,
         <Jumbotron>
-          <MapWithADirectionsRenderer endAddress={this.state.endAddress || [40.750572, -73.976417]} />,
+          <MapWithADirectionsRenderer test={this.state.test} endAddress={this.state.endAddress || [40.750572, -73.976417]} />,
         </Jumbotron>,
         <Table responsive>
           <thead>
@@ -65,8 +69,8 @@ class Home extends React.Component {
             </tr>
           </thead>
           <tbody>
-            
-              { this.state.events.map((event) => ( 
+
+              { this.state.events.map((event) => (
                 <tr>
                   <td>{event.eventname}</td>
                   <td>{event.dinner_type}</td>
@@ -75,9 +79,9 @@ class Home extends React.Component {
                   <td>{event.street}</td>
                   <td><Button bsSize="xsmall" onClick={this.eventClick}  value={event.coordinates}>Get Directions</Button></td>
                 </tr>
-               )) 
+               ))
               }
-            
+
           </tbody>
         </Table>
       </div>

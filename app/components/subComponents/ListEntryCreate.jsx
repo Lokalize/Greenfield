@@ -8,6 +8,7 @@ const ListEntryCreate = (props) => {
     var venue = $(e.target).attr('id');
     var address = $(e.target).attr('class');
     console.log('HOST SELECTED', venue + ' ' + address)
+    $('#options').children().css('background-color', 'white');
     $(e.target).css('background-color', '#D3D3D3' );
     props.selectCallback(venue, address);
   }
