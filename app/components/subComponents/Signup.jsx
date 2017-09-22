@@ -47,7 +47,7 @@ class Signup extends React.Component {
       })
     }
   }
-  
+
   getValidationState(value) {
     const length = value.length;
     if (length > 10) return 'success';
@@ -64,7 +64,7 @@ class Signup extends React.Component {
               type="text"
               value={this.state.username}
               placeholder="username"
-              onChange={this.handleUsernameChange}
+              onChange={this.handleUsernameChange.bind(this)}
             />
             <FormControl.Feedback />
           </FormGroup>
@@ -73,7 +73,7 @@ class Signup extends React.Component {
               type="text"
               value={this.state.password}
               placeholder="password"
-              onChange={this.handlePasswordChange}
+              onChange={this.handlePasswordChange.bind(this)}
             />
             <FormControl.Feedback />
           </FormGroup>

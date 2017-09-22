@@ -77,6 +77,7 @@ class Search extends React.Component {
     return (
       <div>
       <h1 className="JoinEventHeader"> Join an Event! </h1> <br></br>
+      <WarningBanner message={this.state.message}/>
       <Form className="EventForm">
         <FormGroup controlId="formDate" className="EventFormField">
           <FormControl
@@ -114,7 +115,6 @@ class Search extends React.Component {
     <Button className="EventFormField" type="submit" onClick={this.handleSubmit}>
           Find My Event
         </Button>
-        <WarningBanner message={this.state.message}/>
       </Form>
       </div>
     )
