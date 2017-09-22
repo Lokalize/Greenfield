@@ -101,7 +101,6 @@ class Host extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="CreateEventHeader"> Create an Event! </h1> <br></br>
         <Form className="EventForm">
 
           <FormGroup className="EventFormField" controlId="name" validationState={this.getValidationSate(this.state.name)}>
@@ -146,7 +145,7 @@ class Host extends React.Component {
               })}
               </DropdownButton>
             </ButtonGroup><br/><br/>
-            
+
           <ButtonGroup>
             <DropdownButton
               title={this.state.locationForQuery}
@@ -161,10 +160,10 @@ class Host extends React.Component {
           </ButtonGroup><br/><br/>
 
           <ButtonToolbar>
-            <Button bsStyle="warning" bsSize="small" type="reset" onClick={this.clickCancel}>Nevermind</Button><br></br>
+            <Button bsStyle="warning" bsSize="small" type="reset" onClick={this.clickCancel}>Nevermind</Button><br></br><br></br>
 
             <Button bsStyle="primary" bsSize="large" type="submit" onClick={this.clickCreate}>Create Event</Button>
-            
+
           </ButtonToolbar><br/>
         </Form>
       </div>

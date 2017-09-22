@@ -87,6 +87,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <h1 className="CreateEventHeader"> Create an Event! </h1> <br></br>
         <WarningBanner message={this.state.message}/>
         <Host getAllRestaurantsFromQuery={this.restaurantsCallback} eventSuccessful={this.state.eventSuccessful} submitEventCallback={this.submitEvent} isRestaurantSelected={this.state.isRestaurantSelected}/>
         <ListEntryCreate entries = {this.state.restaurants} selectCallback={this.selectRestaurantCallback}/>
