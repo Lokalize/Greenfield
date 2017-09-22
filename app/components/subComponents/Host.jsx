@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, FormGroup, FormControl, PageHeader, ButtonToolbar, Button, ButtonGroup, DropdownButton, MenuItem, ControlLabel } from 'react-bootstrap';
+import { Jumbotron, Form, FormGroup, FormControl, PageHeader, ButtonToolbar, Button, ButtonGroup, DropdownButton, MenuItem, ControlLabel } from 'react-bootstrap';
 import _ from 'underscore';
 import axios from 'axios';
 import {Debounce} from 'react-throttle';
@@ -101,6 +101,7 @@ class Host extends React.Component {
   render() {
     return (
       <div>
+
         <Form className="EventForm">
 
           <FormGroup className="EventFormField" controlId="name" validationState={this.getValidationSate(this.state.name)}>
@@ -166,6 +167,7 @@ class Host extends React.Component {
 
           </ButtonToolbar><br/>
         </Form>
+        
       </div>
 
     )

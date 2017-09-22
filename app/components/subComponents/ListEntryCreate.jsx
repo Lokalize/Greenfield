@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 //list
+import { Jumbotron } from 'react-bootstrap'
 
 const ListEntryCreate = (props) => {
 
@@ -21,6 +22,7 @@ const ListEntryCreate = (props) => {
 
   return (
     <div id='options'>
+      <Jumbotron>
       {props.entries.map( (entry, ind) => (
         <div style={itemStyle} onClick={handleSelect} key={ind} id={entry.restaurant.name} className={entry.restaurant.location.address} >
             Name: {entry.restaurant.name}<br></br>
@@ -30,6 +32,7 @@ const ListEntryCreate = (props) => {
             <img src={entry.restaurant.thumb} width={100} height={100}></img><br></br>
       </div>
         ))}
+        </Jumbotron>
   </div> )
 }
 
