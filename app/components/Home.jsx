@@ -11,14 +11,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       endAddress: [],
-      events: [{
-        "username": "",
-        "eventname": "Slices with Strangers",
-        "dinner_type": "Pizza",
-        "eventdate": "9/27/17",
-        "eventlocation": "NYC",
-        "capacity": null
-    }]
+      events: []
     }
     this.eventClick = this.eventClick.bind(this)
   }
@@ -46,12 +39,12 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Jumbotron>,
+        <Jumbotron>
           <Weather />
         </Jumbotron>
         <Jumbotron>
           <MapWithADirectionsRenderer endAddress={this.state.endAddress || [40.750572, -73.976417]} />,
-        </Jumbotron>,
+        </Jumbotron>
         <Jumbotron>
         <p id="banner">**Must plug in your location in the starting point prompt on the map for directions to work**</p>
         <Table responsive >
@@ -67,7 +60,7 @@ class Home extends React.Component {
           </thead>
           <tbody>
 
-              { this.state.events.map((event) => (
+              { this.state.events.map((event) =>(
                 <tr>
                   <td>{event.eventname}</td>
                   <td>{event.dinner_type}</td>
