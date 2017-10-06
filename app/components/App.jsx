@@ -27,12 +27,12 @@ class App extends React.Component {
       password: password
     })
     .then((res) => {
+      console.log(res)
       if (res.data) {
         this.setState({
           isLoggedIn: true,
           username: username,
           uid: parseInt(res.data)
-
         })
       } else {
         this.setState({
@@ -62,7 +62,8 @@ class App extends React.Component {
   onLogout() {
     this.setState({
       isLoggedIn: false,
-      username: ''
+      username: '',
+      uid:''
     })
   }
 
@@ -87,7 +88,7 @@ class App extends React.Component {
       <div>
         <Header onLogout={this.onLogout} isLoggedIn={this.state.isLoggedIn}/>
         <Switch>
-          {this.routes("/signup", <Signup onSignup={this.onSignup.bind(this)} />, <Redirect to="/home"/>)}
+          {this.routes("/signup", <Signup onSignup={this.onSignup.bind(this)} />, <Redirect to="/home" />)}
           {this.routes("/login", <Login onLogin={this.onLogin.bind(this)}/>, <Redirect to="/home" />)}
           {this.routes("/home", <Redirect to="/login"/>, <Home username={this.state.username} />)}
           {this.routes('/join', <Redirect to="/login"/>, <Join user_id={this.state.uid}/>)}

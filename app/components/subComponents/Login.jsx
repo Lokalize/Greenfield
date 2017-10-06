@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, Button, FormControl, FormGroup} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {
@@ -56,14 +56,14 @@ class Login extends React.Component {
             <FormControl.Feedback />
           </FormGroup>
         </Form>
+        <Button bsSize="lg" onClick={this.onSubmit}>
+        Login
+        </Button>
         <Link to="/signup">
           <Button className="create-account" bsSize="lg" onClick={() => {<Redirect to="/signup" />}}>
             Create Account
           </Button>
         </Link>
-        <Button bsSize="lg" onClick={this.onSubmit}>
-          Login
-        </Button>
       </div>
     )
   }
