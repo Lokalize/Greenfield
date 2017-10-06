@@ -46,11 +46,14 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Weather />,
+        <Jumbotron>,
+          <Weather />
+        </Jumbotron>
         <Jumbotron>
           <MapWithADirectionsRenderer endAddress={this.state.endAddress || [40.750572, -73.976417]} />,
         </Jumbotron>,
         <Jumbotron>
+        <p id="banner">**Must plug in your location in the starting point prompt on the map for directions to work**</p>
         <Table responsive >
           <thead>
             <tr>
