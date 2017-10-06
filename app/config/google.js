@@ -1,0 +1,1 @@
+window.google = 'AIzaSyBHhIUogWMT3x2XTWoWfVpK6yuGpXy8Qxg';
