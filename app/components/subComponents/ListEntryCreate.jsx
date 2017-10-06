@@ -29,7 +29,7 @@ const ListEntryCreate = (props) => {
             Cuisine: {entry.restaurant.cuisines}<br></br>
             Locality: {entry.restaurant.location.locality}<br></br>
             Rating: {entry.restaurant.user_rating.aggregate_rating}<br></br>
-            <img src={entry.restaurant.thumb} width={100} height={100}></img><br></br>
+            <img src={entry.restaurant.thumb} alt="No Image Available" width={100} height={100}></img><br></br>
       </div>
         ))}
         </Jumbotron>
