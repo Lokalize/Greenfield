@@ -27,12 +27,12 @@ class App extends React.Component {
       password: password
     })
     .then((res) => {
+      console.log(res)
       if (res.data) {
         this.setState({
           isLoggedIn: true,
           username: username,
           uid: parseInt(res.data)
-
         })
       } else {
         this.setState({
@@ -62,7 +62,8 @@ class App extends React.Component {
   onLogout() {
     this.setState({
       isLoggedIn: false,
-      username: ''
+      username: '',
+      uid:''
     })
   }
 

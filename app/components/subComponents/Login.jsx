@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, Button, FormControl, FormGroup} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
   constructor(props) {

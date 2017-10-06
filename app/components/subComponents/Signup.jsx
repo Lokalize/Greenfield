@@ -23,6 +23,17 @@ class Signup extends React.Component {
     }
   }
 
+  componentDidMount(){
+    this.setState({
+      username: '',
+      password: '',
+      message: {
+        class:'',
+        message:''
+      }
+    })
+  }
+
   handleUsernameChange (event) {
     this.setState({
       username: event.target.value
@@ -33,9 +44,11 @@ class Signup extends React.Component {
     this.setState({
       password: event.target.value
     })
+
   }
 
   checkUsernamePassword (event) {
+    event.preventDefault()
     if ((this.state.username.length > 0) && (this.state.password.length > 0)) {
         this.props.onSignup(this.state.username, this.state.password)
     } else {
