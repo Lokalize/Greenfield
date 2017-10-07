@@ -1,1 +1,1 @@
-window.google=process.env.Google_API
+window.google=process.env.GOOGLE_API
