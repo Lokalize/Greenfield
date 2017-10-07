@@ -6,7 +6,7 @@ import SearchBox from "react-google-maps/lib/components/places/SearchBox";
 
 const MapWithADirectionsRenderer = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=" + process.env.GOOGLE_API + "&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBHhIUogWMT3x2XTWoWfVpK6yuGpXy8Qxg&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `400px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
