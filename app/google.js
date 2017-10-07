@@ -1,1 +1,1 @@
-window.google=process.env.GOOGLE_API
+window.google='alex'
